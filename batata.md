@@ -1,1 +1,1 @@
-oie batatinha quando nasce espalha ama pelo chão git status
+oie batatinha quando nasce espalha rama pelo chão 
