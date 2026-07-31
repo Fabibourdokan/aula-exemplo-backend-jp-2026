@@ -1,0 +1,25 @@
+{
+  "name": "0.0.1",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/Fabibourdokan/aula-exemplo-backend-jp-2026#readme",
+  "bugs": {
+    "url": "https://github.com/Fabibourdokan/aula-exemplo-backend-jp-2026/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fabibourdokan/aula-exemplo-backend-jp-2026.git"
+  },
+  "license": "ISC",
+  "author": "Fabiana Bourdokan Valiente",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "test": "jest"
+  },
+  "keywords": [],
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
