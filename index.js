@@ -42,8 +42,8 @@ app.post("/api/graus", (req, res) => {
 });
 
 //5. Peça uma distância em milhas e converta para quilômetros.    (Dica: 1 milha = 1.60934 km)
-app.get("/api/distancia/:milhas", (req, res) => {
-    const milhas = Number(req.params.milhas);
+app.post("/api/distancia/milhas", (req, res) => {
+    const milhas = req.body.milhas;
     const km = milhas * 160934
     
     res.send({
@@ -52,21 +52,20 @@ app.get("/api/distancia/:milhas", (req, res) => {
 });
 
 //6. Peça a duração de um evento em segundos. Mostre esse tempo em horas, minutos e segundos.
-app.get("/api/tempo/:segundos", (req, res) => {
-    const totalSegundos = Number(req.params.segundos);
+app.post("/api/tempo", (req, res) => {
+    const totalSegundos = req.body.totalSegundos;
 
     const horas = Math.floor(totalSegundos / 3600);
     const minutos = Math.floor((totalSegundos % 3600) / 60);
-    const segundos = totalSegundos % 60;
 
     res.send({
-        message: `${totalSegundos} segundos equivalem a ${horas} hora(s), ${minutos} minuto(s) e ${segundos} segundo(s).`
+        message: `${totalSegundos} segundos equivalem a ${horas} hora(s). E equivalem a ${minutos} minuto(s).`
     });
 });
 
 //7. Peça uma distância em quilômetros e converta para metros e centímetros.
-app.get("/api/distancia2/:km", (req, res) => {
-    const km = Number(req.params.km);
+app.post("/api/distancia2", (req, res) => {
+    const km = req.body.km;
 
     const metros = Number(km * 1000);
     const centimetros = Number(km * 100000);
@@ -78,8 +77,8 @@ app.get("/api/distancia2/:km", (req, res) => {
 
 // 8. Peça um número inteiro e mostre a tabuada dele (do 0 até o 10).
 
-app.get("/api/numero/:n", (req, res) => {
-    const n = Number(req.params.n);
+app.post("/api/numero", (req, res) => {
+    const n = req.body.n;
 
     const tabuada = [];
 
@@ -92,8 +91,6 @@ app.get("/api/numero/:n", (req, res) => {
         tabuada: tabuada
     });
 });
-
-
 
 
 app.listen(3000, () => {
